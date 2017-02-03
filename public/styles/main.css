@@ -5,6 +5,14 @@ body {
   font-family: helvetica;
   margin: 0;
 }
+input[type=text] {
+    background-color: rgb(34, 37, 42);
+    color: rgb(158, 165, 179);
+    font-size: 1.2em;
+    margin-left: 2em;
+    width: 28em;
+}
+
 .footer {
   background-color: rgb(2, 48, 142);
   bottom:0;
@@ -14,6 +22,18 @@ body {
 }
 .footer_text {
   margin: 0 auto;
+}
+.gist_form {
+  background-color: rgb(34, 37, 42);
+  height: auto;
+  margin: .8em auto;
+  padding: 1em;
+  text-align: center;
+  width: 40em;
+}
+.gist_input {
+  margin: .2em;
+  padding: .2em;
 }
 .nav_bar {
   background-color: rgb(2, 48, 142);
