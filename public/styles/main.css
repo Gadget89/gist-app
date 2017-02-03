@@ -1,10 +1,23 @@
 /* main.css */
 body {
+  background-color: rgb(41, 44, 51);
+  color: rgb(158, 165, 179);
+  font-family: helvetica;
   margin: 0;
 }
+.footer {
+  background-color: rgb(2, 48, 142);
+  bottom:0;
+  padding: 1em;
+  position:absolute;
+  width: 100%;
+}
+.footer_text {
+  margin: 0 auto;
+}
 .nav_bar {
-  background-color: grey;
-  /*opacity: .3;*/
+  background-color: rgb(2, 48, 142);
+  padding: 1em;
 }
 .nav__currentUser {
   color: rgb(245, 245, 245);
@@ -24,10 +37,11 @@ body {
 }
 
 .nav__signIn, .nav__signOut {
-    background-color: green;
-    border-radius: 0.4rem;
-    color: rgb(245, 245, 245);
+    background-color: rgb(158, 165, 179);
+    border-radius: 20px;
+    color: rgb(2, 62, 158);
     display: inline-block;
+    font-weight: bold;
     padding: 0.5rem 1rem;
     position: absolute;
     top: 1rem;
@@ -36,8 +50,8 @@ body {
 }
 
 .nav__signIn:hover, .nav__signOut:hover {
-    background-color: red;
-    color: rgb(231, 76, 60);
+    background-color: rgb(41, 44, 51);
+    color: rgb(201, 155, 109);
     cursor: pointer;
     transition: color 0.6s, background-color 0.6s;
 }
