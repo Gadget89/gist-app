@@ -24,45 +24,58 @@ export default React.createClass({
     var newNoteTitle = this.state.note.title
     var newNoteUrl = this.state.note.url
     var newNoteText = this.state.note.note
-    this.refs.noteList.insertAdjacentHTML("afterbegin", `<section><p>${newNoteTitle}</p><<section>`)
-    this.refs.noteList.insertAdjacentHTML("afterbegin", `<section><p>${newNoteUrl}</p><<section>`)
-    this.refs.noteList.insertAdjacentHTML("afterbegin", `<section><p>${newNoteText}</p><<section>`)
+    this.refs.noteList.insertAdjacentHTML("afterbegin", `<section><p>${newNoteTitle}</p><p>${newNoteUrl}</p><p>${newNoteText}</p><section>`)
+    this.refs.newGistForm.className = "hidden"
+    this.refs.newGistButton.className = "visible"
+  },
+  onAddNoteClick(e){
+    this.refs.newGistForm.className = "visible"
+    this.refs.newGistButton.className = "hidden"
   },
   render() {
     return (
-      <section className="gist_form">
-        <p className="new_gist_title">New Gist</p>
+      <section>
         <button
-          className="new_gist_save_button"
-          onClick={ this.onSaveClick }
-          type="submit">Save</button>
-        <button className="new_gist_clear_button">Clear</button>
-        <form className="new_gist_wrapper">
-          <input
-            onChange={this.onNewNoteChange}
-            className="new_gist_input"
-            placeholder="Title"
-            type="text"
-            ref="noteTitle">
-          </input>
-          <input
-            onChange={this.onNewNoteChange}
-            className="new_gist_input"
-            placeholder="URL"
-            type="text"
-            ref="noteUrl">
-          </input>
-          <input
-            onChange={this.onNewNoteChange}
-            className="new_gist_input"
-            placeholder="Make a note"
-            type="text"
-            ref="noteText">
-          </input>
-          <section ref="noteList">
+          className="hidden"
+          onClick={this.onAddNoteClick}
+          ref="newGistButton">
+          +
+        </button>
+        <div
+          className="gist_form"
+          ref="newGistForm">
+          <p className="new_gist_title">New Gist</p>
+          <button
+            className="new_gist_save_button"
+            onClick={ this.onSaveClick }
+            type="submit">Save</button>
+          <button className="new_gist_clear_button">Clear</button>
+          <form onChange={this.onNewNoteChange} className="new_gist_wrapper">
+            <input
+              className="new_gist_input"
+              placeholder="Title"
+              type="text"
+              ref="noteTitle">
+            </input>
+            <input
+              className="new_gist_input"
+              placeholder="URL"
+              type="text"
+              ref="noteUrl">
+            </input>
+            <input
+              className="new_gist_input"
+              placeholder="Make a note"
+              type="text"
+              ref="noteText">
+            </input>
+          </form>
+        </div>
+        <section
+          className=""
+          ref="noteList">
 
-          </section>
-        </form>
+        </section>
       </section>
     )
   }
