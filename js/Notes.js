@@ -1,31 +1,27 @@
 import React from 'react'
+import Note from './Note'
 
 export default React.createClass({
   getInitialState(){
     return {
-    note: {
-        title:"",
-        url:"",
-        note:""
-      }
+      notes: [
+        {
+          title:"Get Initial State in React",
+          url:"https://facebook.github.io/react/",
+          note:"React is so awesome, I think I'm in love"
+        }
+      ]
     }
   },
-  onNewNoteChange() {
-    this.setState({
-      note: {
-        title: this.refs.noteTitle.value,
-        url: this.refs.noteUrl.value,
-        note: this.refs.noteText.value
-      }
-    })
-  },
   onSaveClick(e){
-    e.preventDefault();
-    var newNoteTitle = this.state.note.title
-    var newNoteUrl = this.state.note.url
-    var newNoteText = this.state.note.note
-    this.refs.noteList.insertAdjacentHTML("afterbegin", `<ol><li>${newNoteTitle}</li><ol>`)
-    this.refs.noteList2.insertAdjacentHTML("afterbegin",`<ol><li>${newNoteUrl}</li><li>${newNoteText}</li><ol>`)
+    e.preventDefault()
+    this.setState({
+      notes: this.state.notes.concat({
+        title: this.refs.title.value,
+        url: this.refs.url.value,
+        note: this.refs.note.value
+      })
+    })
     this.refs.newGistForm.className = "hidden"
     this.refs.newGistButton.className = "new_gist_clear_button"
   },
@@ -53,37 +49,32 @@ export default React.createClass({
             onClick={ this.onSaveClick }
             type="submit">Save</button>
           <button className="new_gist_clear_button">Clear</button>
-          <form onChange={this.onNewNoteChange} className="new_gist_wrapper">
+          <form onSubmit={this.onSaveClick} className="new_gist_wrapper">
             <input
               className="new_gist_input"
+              name="title"
               placeholder="Title"
               type="text"
-              ref="noteTitle">
-            </input>
+              ref="title" />
             <input
               className="new_gist_input"
+              name="url"
               placeholder="URL"
               type="text"
-              ref="noteUrl">
-            </input>
+              ref="url" />
             <input
               className="new_gist_input"
               placeholder="Make a note"
               type="text"
-              ref="noteText">
-            </input>
+              ref="note" />
           </form>
         </div>
-        <section>
-          <div
-            className="gist_form"
-            ref="noteList">
-          </div>
-          <div
-            className="gist_form"
-            ref="noteList2">
-          </div>
-        </section>
+        { this.state.notes.map( (note, i)=>{
+        return <Note title={note.title}
+                        url={note.url}
+                        note={note.note}
+                        key={i} />
+      } ) }
       </section>
     )
   }

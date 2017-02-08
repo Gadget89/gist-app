@@ -10,8 +10,7 @@ export default React.createClass({
     return (
       <section>
         <Header/>
-        {this.props.children && React.cloneElement(this.props.children,
-        { user: this.state.user })}
+          { this.props.children }
         <Notes/>
         <Footer />
       </section>
