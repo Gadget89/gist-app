@@ -24,12 +24,15 @@ export default React.createClass({
     var newNoteTitle = this.state.note.title
     var newNoteUrl = this.state.note.url
     var newNoteText = this.state.note.note
-    this.refs.noteList.insertAdjacentHTML("afterbegin", `<section><p>${newNoteTitle}</p><p>${newNoteUrl}</p><p>${newNoteText}</p><section>`)
+    this.refs.noteList.insertAdjacentHTML("afterbegin", `<ol><li>${newNoteTitle}</li><ol>`)
+    this.refs.noteList2.insertAdjacentHTML("afterbegin",`<ol><li>${newNoteUrl}</li><li>${newNoteText}</li><ol>`)
     this.refs.newGistForm.className = "hidden"
-    this.refs.newGistButton.className = "visible"
+    this.refs.newGistButton.className = "new_gist_clear_button"
   },
+  // Do I need a componentDidMount event here to handle geting the data to the list of notes?
+  // Maybe get each by id?
   onAddNoteClick(e){
-    this.refs.newGistForm.className = "visible"
+    this.refs.newGistForm.className = "gist_form"
     this.refs.newGistButton.className = "hidden"
   },
   render() {
@@ -71,10 +74,15 @@ export default React.createClass({
             </input>
           </form>
         </div>
-        <section
-          className=""
-          ref="noteList">
-
+        <section>
+          <div
+            className="gist_form"
+            ref="noteList">
+          </div>
+          <div
+            className="gist_form"
+            ref="noteList2">
+          </div>
         </section>
       </section>
     )

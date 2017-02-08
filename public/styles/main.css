@@ -107,3 +107,6 @@ input[type=text] {
 .visible {
   display: block;
 }
+.list {
+  background-color: pink;
+}
