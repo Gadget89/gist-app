@@ -12,7 +12,6 @@ input[type=text] {
     margin-left: 2em;
     width: 28em;
 }
-
 .new_gist_wrapper {
   margin-top: 1em;
 }
@@ -45,7 +44,7 @@ input[type=text] {
 .footer_text {
   margin: 0 auto;
 }
-.gist_form {
+.gist_form, .note_list {
   background-color: rgb(34, 37, 42);
   height: auto;
   margin: .8em auto;
@@ -106,7 +105,4 @@ input[type=text] {
 
 .visible {
   display: block;
-}
-.list {
-  background-color: pink;
 }

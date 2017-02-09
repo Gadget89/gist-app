@@ -1,22 +1,25 @@
 import React from 'react'
+import Notes from './Notes'
 
 export default React.createClass({
   render(){
     return (
-      <article className="article">
-        <h2 className="article__title">
-          { this.props.title }
-        </h2>
-        <p className="article__description">
-          { this.props.url }
-        </p>
-        <p className="article__image">
-          { this.props.note }
-        </p>
-           <a className="article__link"
-           href="#">
-           read more
-        </a>
+      <article className="note_list">
+        <button
+          className="#"
+          onClick={this.onListNoteClick}>
+          <b> { this.props.title } </b>
+        </button>
+        <div
+          className="hidden"
+          ref="noteDetails">
+          <p>
+            { this.props.url }
+          </p>
+          <p>
+            { this.props.note }
+          </p>
+        </div>
       </article>
     )
   }
