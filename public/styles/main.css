@@ -12,6 +12,10 @@ input[type=text] {
     margin-left: 2em;
     width: 28em;
 }
+a {
+  text-decoration: none;
+  color: rgb(187, 126, 215);
+}
 .new_gist_wrapper {
   margin-top: 1em;
 }
@@ -44,7 +48,16 @@ input[type=text] {
 .footer_text {
   margin: 0 auto;
 }
-.gist_form, .note_list {
+.gist_form {
+  background-color: rgb(34, 37, 42);
+  height: auto;
+  margin: .8em auto;
+  padding: 1em;
+  text-align: left;
+  width: 40em;
+}
+
+.note_list {
   background-color: rgb(34, 37, 42);
   height: auto;
   margin: .8em auto;

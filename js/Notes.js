@@ -31,9 +31,7 @@ export default React.createClass({
     this.refs.newGistForm.className = "gist_form"
     this.refs.newGistButton.className = "hidden"
   },
-  onListNoteClick(e){
-    this.refs.noteDetails.className = "note_list"
-  },
+
   render() {
     return (
       <section>

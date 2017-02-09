@@ -2,24 +2,33 @@ import React from 'react'
 import Notes from './Notes'
 
 export default React.createClass({
+  onClickNoteList(e){
+    if (this.refs.noteDetails.className === "hidden"){
+    this.refs.noteDetails.className = "note_list"
+    }else{
+    this.refs.noteDetails.className= "hidden"
+    }
+  },
   render(){
     return (
       <article className="note_list">
-        <button
-          className="#"
-          onClick={this.onListNoteClick}>
+        <a
+          href="#"
+          onClick={this.onClickNoteList}>
           <b> { this.props.title } </b>
-        </button>
-        <div
+        </a>
+        <section
           className="hidden"
           ref="noteDetails">
-          <p>
+          <a
+            href={ this.props.url }
+            target="_blank">
             { this.props.url }
-          </p>
+          </a>
           <p>
             { this.props.note }
           </p>
-        </div>
+        </section>
       </article>
     )
   }
