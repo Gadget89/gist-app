@@ -11,7 +11,7 @@ export default React.createClass({
   },
   render(){
     return (
-      <article className="note_list">
+      <article className="note_list_wrapper">
         <a
           href="#"
           onClick={this.onClickNoteList}>

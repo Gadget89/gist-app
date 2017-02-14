@@ -63,7 +63,7 @@ export default React.createClass({
               placeholder="URL"
               type="text"
               ref="url" />
-            <input
+            <textarea
               className="new_gist_input"
               placeholder="Make a note"
               type="text"

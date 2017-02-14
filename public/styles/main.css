@@ -3,9 +3,10 @@ body {
   background-color: rgb(41, 44, 51);
   color: rgb(158, 165, 179);
   font-family: helvetica;
+  height: auto;
   margin: 0;
 }
-input[type=text] {
+input, textarea[type=text] {
     background-color: rgb(34, 37, 42);
     color: rgb(158, 165, 179);
     font-size: 1.2em;
@@ -58,6 +59,15 @@ a {
 }
 
 .note_list {
+  background-color: rgb(34, 37, 42);
+  height: auto;
+  margin: .8em auto;
+  padding: 1em;
+  text-align: left;
+  width: 38em;
+}
+
+.note_list_wrapper {
   background-color: rgb(34, 37, 42);
   height: auto;
   margin: .8em auto;
