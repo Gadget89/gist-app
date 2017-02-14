@@ -6,19 +6,13 @@ body {
   height: auto;
   margin: 0;
 }
-input, textarea[type=text] {
-    background-color: rgb(34, 37, 42);
-    color: rgb(158, 165, 179);
-    font-size: 1.2em;
-    margin-left: 2em;
-    width: 28em;
-}
+
 a {
   text-decoration: none;
   color: rgb(187, 126, 215);
 }
 .new_gist_wrapper {
-  margin-top: 1em;
+  margin-top: .5em;
 }
 .new_gist_clear_button, .new_gist_save_button {
   background-color: rgb(158, 165, 179);
@@ -30,8 +24,13 @@ a {
 }
 
 .new_gist_input {
-  margin: .2em;
-  padding: .2em;
+  margin-top: .5em;
+  background-color: rgb(34, 37, 42);
+  border: solid 2px grey;
+  color: rgb(158, 165, 179);
+  font-size: 1.2em;
+  margin-left: 1em;
+  width: 31em;
 }
 
 .new_gist_title {

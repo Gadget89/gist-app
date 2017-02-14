@@ -54,18 +54,18 @@ export default React.createClass({
             <input
               className="new_gist_input"
               name="title"
-              placeholder="Title"
+              placeholder=" Title"
               type="text"
               ref="title" />
             <input
               className="new_gist_input"
               name="url"
-              placeholder="URL"
+              placeholder=" URL"
               type="text"
               ref="url" />
             <textarea
               className="new_gist_input"
-              placeholder="Make a note"
+              placeholder=" Make a note"
               type="text"
               ref="note" />
           </form>
