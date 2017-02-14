@@ -77,6 +77,7 @@ export default React.createClass({
                         key={i} />
       } ) }
       </section>
+
     )
   }
 })

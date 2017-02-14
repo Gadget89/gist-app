@@ -80,14 +80,18 @@ render() {
     return(
       <section>
         <nav className="nav_bar">
-          <p>Welcome {this.state.currentName}</p>
-          <img className="nav__currentUserImage" src={this.state.picture} />
-          <button className="nav__signIn"
-              onClick={this.logInUser}
-              data-js="nav__signIn"> Log In </button>
-          <button className="nav__signOut--hide"
-              onClick={this.signUserOut}
-              data-js="nav__signOut"> Log Out</button>
+          <div>
+            <img className="nav__currentUserImage" src={this.state.picture} />
+            <button className="nav__signIn"
+                onClick={this.logInUser}
+                data-js="nav__signIn"> Log In </button>
+            <button className="nav__signOut--hide"
+                onClick={this.signUserOut}
+                data-js="nav__signOut"> Log Out</button>
+          </div>
+            <div>
+              <p className="nav__currentUser">Welcome {this.state.currentName}</p>
+            </div>
         </nav>
       </section>
     )

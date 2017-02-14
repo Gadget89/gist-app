@@ -81,15 +81,16 @@ a {
 
 .nav_bar {
   background-color: rgb(2, 48, 142);
-  padding: 1em;
+  height: 5em;
 }
 
 .nav__currentUser {
-  color: rgb(245, 245, 245);
   display: inline-block;
-  position: absolute;
-  top: 1.5rem;
-  right: 9rem;
+  width: 25em;
+  text-align: right;
+  float: right;
+  margin-top: 3.4em;
+  padding-right: 1em;
 }
 
 .nav__currentUserImage {
