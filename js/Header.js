@@ -80,7 +80,16 @@ render() {
     return(
       <section>
         <nav className="nav_bar">
-          <div>
+          <div className="nav_logo_wrapper">
+            <p className="nav_logo">
+              <b>gist=</b>
+            </p>
+            <br></br>
+            <p>
+                "notes for coders"
+            </p>
+            <div>
+          </div>
             <img className="nav__currentUserImage" src={this.state.picture} />
             <button className="nav__signIn"
                 onClick={this.logInUser}
