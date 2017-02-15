@@ -44,13 +44,19 @@ export default React.createClass({
         <div
           className="gist_form"
           ref="newGistForm">
-          <p className="new_gist_title">New Gist</p>
-          <button
-            className="new_gist_save_button"
-            onClick={ this.onSaveClick }
-            type="submit">Save</button>
-          <button className="new_gist_clear_button">Clear</button>
-          <form onSubmit={this.onSaveClick} className="new_gist_wrapper">
+
+          <form
+            onSubmit={this.onSaveClick}
+            className="new_gist_wrapper">
+            <p className="new_gist_title">New Gist</p>
+            <input
+              className="new_gist_clear_button"
+              type="reset"
+              value="Clear"/>
+            <button
+              className="new_gist_save_button"
+              onClick={ this.onSaveClick }
+              type="submit">Save</button>
             <input
               className="new_gist_input"
               name="title"

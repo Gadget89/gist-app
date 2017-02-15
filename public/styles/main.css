@@ -15,10 +15,13 @@ a {
   margin-top: .5em;
 }
 .new_gist_clear_button, .new_gist_save_button {
-  background-color: rgb(158, 165, 179);
-  color: rgb(2, 62, 158);
+  background-color: rgb(34, 37, 42);
+  border: none;
+  border-bottom: solid 1px rgb(242, 151, 102);
+  color: rgb(76, 136, 255);
   display: inline-block;
   font-weight: bold;
+  margin-left: 1em;
   padding: 0.5rem 1rem;
   float: right;
 }
@@ -118,9 +121,11 @@ font-size: 22px;
 }
 
 .nav__signIn, .nav__signOut {
-    background-color: rgb(158, 165, 179);
+    background-color: rgb(34, 37, 42);
     /*border-radius: 20px;*/
-    color: rgb(2, 62, 158);
+    border: none;
+    border-bottom: solid 1px rgb(242, 151, 102);
+    color: rgb(76, 136, 255);
     display: inline-block;
     font-weight: bold;
     padding: 0.5rem 1rem;

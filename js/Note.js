@@ -9,6 +9,7 @@ export default React.createClass({
     this.refs.noteDetails.className= "hidden"
     }
   },
+  
   render(){
     return (
       <article className="note_list_wrapper">
