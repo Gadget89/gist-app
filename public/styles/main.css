@@ -14,7 +14,13 @@ a {
 .new_gist_wrapper {
   margin-top: .5em;
 }
-.new_gist_clear_button, .new_gist_save_button {
+.new_gist_button:hover, .tab_links:hover {
+  border: solid 1px rgb(242, 151, 102);
+  cursor: pointer;
+  transition: color 0.6s, background-color 0.6s;
+}
+
+.new_gist_button {
   background-color: rgb(34, 37, 42);
   border: none;
   border-bottom: solid 1px rgb(242, 151, 102);
@@ -27,6 +33,7 @@ a {
 }
 
 .new_gist_input {
+  -webkit-appearance: none;
   margin-top: .5em;
   background-color: rgb(34, 37, 42);
   border: solid 2px grey;
@@ -135,12 +142,11 @@ font-size: 22px;
     /*transition: color 0.6s, background-color 0.6s;*/
 }
 
-/*.nav__signIn:hover, .nav__signOut:hover {
-    background-color: rgb(41, 44, 51);
-    color: rgb(201, 155, 109);
+.nav__signIn:hover, .nav__signOut:hover {
+    border: solid 1px rgb(242, 151, 102);
     cursor: pointer;
     transition: color 0.6s, background-color 0.6s;
-}*/
+}
 
 .nav__signOut--hide {
   display: none;
@@ -148,4 +154,42 @@ font-size: 22px;
 
 .visible {
   display: block;
+}
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+.dropdown {
+  -webkit-appearance: none;
+  background-color: rgb(34, 37, 42);
+  border: none;
+  border-radius: 0;
+  border-bottom: solid 1px rgb(242, 151, 102);
+  color: rgb(76, 136, 255);
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+.tab_links {
+  background-color: rgb(34, 37, 42);
+  border: none;
+  /*border-bottom: solid 1px rgb(242, 151, 102);*/
+  color: rgb(153, 127, 255);
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 1em;
+  padding: 0.5rem 1rem;
+}
+
+.tab_content {
+  background-color: rgb(34, 37, 42);
+  border-top: solid 1px rgb(242, 151, 102);
+  height: auto;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: left;
+  width: 40em;
+}
+.tab_wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 42em;
 }

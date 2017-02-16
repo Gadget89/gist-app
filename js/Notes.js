@@ -49,12 +49,19 @@ export default React.createClass({
             onSubmit={this.onSaveClick}
             className="new_gist_wrapper">
             <p className="new_gist_title">New Gist</p>
-            <input
-              className="new_gist_clear_button"
-              type="reset"
-              value="Clear"/>
+            <select
+              className="dropdown"
+              name="tab">
+              <option value="JavaScript">JavaScript</option>
+              <option value="HTML">HTML</option>
+              <option value="CSS">CSS</option>
+            </select>
             <button
-              className="new_gist_save_button"
+              className="new_gist_button"
+              type="reset">
+              Clear</button>
+            <button
+              className="new_gist_button"
               onClick={ this.onSaveClick }
               type="submit">Save</button>
             <input
@@ -73,6 +80,7 @@ export default React.createClass({
               className="new_gist_input"
               placeholder=" Make a note"
               type="text"
+              rows="3"
               ref="note" />
           </form>
         </div>
