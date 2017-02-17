@@ -32,9 +32,7 @@ export default React.createClass({
             </p>
           </section>
         </article>
-
       </main>
-
     )
   }
 })

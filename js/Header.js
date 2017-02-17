@@ -82,7 +82,7 @@ render() {
         <nav className="nav_bar">
           <div className="nav_logo_wrapper">
             <p className="nav_logo">
-              <b>gist=</b>
+              <b>gistApp=</b>
             </p>
             <br></br>
             <p>
