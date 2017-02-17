@@ -32,6 +32,23 @@ export default React.createClass({
     this.refs.newGistButton.className = "hidden"
   },
 
+  onJsTabClick(e){
+    this.refs.jsTab.className = "tab_content"
+    this.refs.cssTab.className = "hidden"
+    this.refs.htmlTab.className = "hidden"
+  },
+  onCssTabClick(e){
+    this.refs.jsTab.className = "hidden"
+    this.refs.cssTab.className = "tab_content"
+    this.refs.htmlTab.className = "hidden"
+  },
+  onHtmlTabClick(e){
+    this.refs.jsTab.className = "hidden"
+    this.refs.cssTab.className = "hidden"
+    this.refs.htmlTab.className = "tab_content"
+  },
+
+
   render() {
     return (
       <section>
@@ -84,12 +101,32 @@ export default React.createClass({
               ref="note" />
           </form>
         </div>
-        { this.state.notes.map( (note, i)=>{
-        return <Note title={note.title}
-                        url={note.url}
-                        note={note.note}
-                        key={i} />
-      } ) }
+
+        <section>
+        <div className="tab_wrapper">
+          <button className="tab_links" onClick={this.onJsTabClick}>JavaScript</button>
+          <button className="tab_links" onClick={this.onCssTabClick}>CSS</button>
+          <button className="tab_links" onClick={this.onHtmlTabClick}>HTML</button>
+        </div>
+        </section>
+        <div id="" ref="jsTab" className="tab_content">
+          { this.state.notes.map( (note, i)=>{
+          return <Note title={note.title}
+                          url={note.url}
+                          note={note.note}
+                          key={i} />
+          } ) }
+        </div>
+
+        <div id="" ref="cssTab" className="hidden">
+          <p>css stuff will go here</p>
+        </div>
+
+        <div id="Tokyo" ref="htmlTab" className="hidden">
+          <p>html stuff will go here</p>
+        </div>
+
+
       </section>
 
     )

@@ -14,7 +14,7 @@ a {
 .new_gist_wrapper {
   margin-top: .5em;
 }
-.new_gist_button:hover, .tab_links:hover {
+.new_gist_button:hover {
   border: solid 1px rgb(242, 151, 102);
   cursor: pointer;
   transition: color 0.6s, background-color 0.6s;
@@ -82,7 +82,7 @@ a {
   margin: .8em auto;
   padding: 1em;
   text-align: left;
-  width: 40em;
+  width: 39em;
 }
 
 .hidden {
@@ -191,5 +191,13 @@ font-size: 22px;
 .tab_wrapper {
   margin-left: auto;
   margin-right: auto;
+  height: auto;
   width: 42em;
+}
+.tab_links:hover {
+  border-top: solid 1px rgb(242, 151, 102);
+  border-left: solid 1px rgb(242, 151, 102);
+  border-right: solid 1px rgb(242, 151, 102);
+  cursor: pointer;
+  transition: color 0.6s, background-color 0.6s;
 }
