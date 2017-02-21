@@ -31,6 +31,7 @@ export default React.createClass({
     this.setState(this.state.notes)
 
     console.log("newNotes:", this.state.notes)
+
     var tempUser = this.props.user.name
     var tempHold = tempUser.split(" ")
     var fbUser = tempHold[0]
@@ -70,6 +71,10 @@ export default React.createClass({
 
 
   render() {
+        console.log("Blah",this.props.notes);
+        if(this.props.notes!=undefined){
+          this.state.notes=this.props.notes
+        }
     return (
       <section>
         <button
