@@ -1,81 +1,12 @@
 import React from 'react'
+import Notes from './Notes'
+
+// document.getElementById('app')
+// console.log("This is logging notes", Notes);
+// var user
 
 export default React.createClass({
-  componentDidMount() {
-    this.setState({provider: new firebase.auth.GoogleAuthProvider()});
 
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) { // Signed in successfully
-        var signOutButton = document.querySelector("[data-js='nav__signOut']")
-        if (signOutButton.className == "nav__signOut--hide") {
-          signOutButton.className = "nav__signOut";
-        }
-        var currentUser = {};
-
-        currentUser["/users/" + user.uid] = {
-          email: user.email,
-          name: user.displayName,
-          picture: user.photoURL
-        }
-
-        //FIXME: Don't do this until we get data back from DB
-        this.setState({
-          currentName: user.email,
-          name: user.displayName,
-          picture: user.photoURL
-        })
-      // promise for grabbing data from database
-    //  firebase.database().ref().update(currentUser)
-    //  firebase.database().ref("/users/" + user.uid).once("value").then((snapshot) => {
-    //    var snapshotReturn = snapshot.val()
-    //     this.setState({
-    //       currentName: snapshotReturn.email,
-    //       name: user.displayName,
-    //       picture: user.photoURL
-    //     })
-    //   })
-    }
-    else { // signed out or something went wrong
-      var signOutButton = document.querySelector("[data-js='nav__signOut']")
-      if(signOutButton.className == "nav__signOut"){
-        signOutButton.className = "nav__signOut--hide"
-      }
-    }
-  })
-  },
-  getInitialState() {
-    return {
-      provider: () => {},
-      currentName: "please log in",
-      name: "",
-      picture: ""
-    }
-  },
-  logInUser() {
-    firebase.auth().signInWithRedirect(this.state.provider);
-    firebase.auth().getRedirectResult().then((result) => {
-      if(result.credential) {
-        var token = result.credential.accessToken;
-      }
-      var user = result.user;
-    }).catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
-      console.log("ERROR authenticating with firebase: " + errorMessage);
-      //FIXME: Better logging/error handling
-    });
-  },
-  signUserOut() {
-    firebase.auth().signOut().then(() => {
-      this.setState({
-        currentName: "",
-        picture: "",
-        name: ""
-      })
-    })
-  },
 render() {
     return(
       <section>
@@ -90,16 +21,16 @@ render() {
             </p>
             <div>
           </div>
-            <img className="nav__currentUserImage" src={this.state.picture} />
+            <img className="nav__currentUserImage" src={this.props.picture} />
             <button className="nav__signIn"
-                onClick={this.logInUser}
+                onClick={this.props.logInUser}
                 data-js="nav__signIn"> Log In </button>
             <button className="nav__signOut--hide"
-                onClick={this.signUserOut}
+                onClick={this.props.signUserOut}
                 data-js="nav__signOut"> Log Out</button>
           </div>
             <div>
-              <p className="nav__currentUser">Welcome {this.state.currentName}</p>
+              <p className="nav__currentUser">Welcome {this.props.currentName}</p>
             </div>
         </nav>
       </section>

@@ -20,7 +20,7 @@ a {
   transition: color 0.6s, background-color 0.6s;
 }
 
-.new_gist_button {
+.new_gist_button, .new_gist_clear_button {
   background-color: rgb(34, 37, 42);
   border: none;
   border-bottom: solid 1px rgb(242, 151, 102);

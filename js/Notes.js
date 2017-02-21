@@ -1,7 +1,11 @@
 import React from 'react'
 import Note from './Note'
+import Header from './Header'
+
+
 
 export default React.createClass({
+
   getInitialState(){
     return {
       notes: [
@@ -23,11 +27,24 @@ export default React.createClass({
       note: this.refs.note.value,
       type: selectedType
     }
-
     this.state.notes=this.state.notes.concat(newNotes)
     this.setState(this.state.notes)
+
+    console.log("newNotes:", this.state.notes)
+    var tempUser = this.props.user.name
+    var tempHold = tempUser.split(" ")
+    var fbUser = tempHold[0]
+    console.log("temphold",fbUser);
+    var updates = {}
+    updates["/Notes/" + fbUser] = this.state.notes
+    firebase.database().ref().update(updates)
+    // firebase.database().ref("/Notes/" + tempHold[0] + "/").push().update(newNotes)
+
     this.refs.newGistForm.className = "hidden"
     this.refs.newGistButton.className = "new_gist_clear_button"
+    this.refs.title.value = ""
+    this.refs.url.value= ""
+    this.refs.note.value= ""
   },
 
   onAddNoteClick(e){
