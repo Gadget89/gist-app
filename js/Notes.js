@@ -72,7 +72,7 @@ export default React.createClass({
           this.state.notes=this.props.notes
         }
     return (
-      <section>
+      <section className="page_wrap">
 
         <div
           className="gist_form"
@@ -134,7 +134,7 @@ export default React.createClass({
         </div>
         </section>
         <div id="" ref="jsTab" className="tab_content">
-          <p>JavaScript Notes</p>
+          <p className="tab_header">JavaScript Notes</p>
           { this.state.notes.map( (note, i)=>{
             if (note.type === "JavaScript"){
           return <Note title={note.title}
@@ -148,7 +148,7 @@ export default React.createClass({
         </div>
 
         <div id="" ref="cssTab" className="hidden">
-          <p>CSS Notes</p>
+          <p className="tab_header">CSS Notes</p>
           { this.state.notes.map( (note, i)=>{
             if (note.type === "CSS"){
           return <Note title={note.title}
@@ -162,7 +162,7 @@ export default React.createClass({
         </div>
 
         <div id="Tokyo" ref="htmlTab" className="hidden">
-          <p>HTML Notes</p>
+          <p className="tab_header">HTML Notes</p>
           { this.state.notes.map( (note, i)=>{
             if (note.type === "HTML"){
           return <Note title={note.title}
