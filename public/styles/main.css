@@ -20,7 +20,7 @@ a {
   transition: color 0.6s, background-color 0.6s;
 }
 
-.new_gist_button, .new_gist_clear_button {
+.new_gist_clear_button {
   background-color: rgb(34, 37, 42);
   border: none;
   border-bottom: solid 1px rgb(242, 151, 102);
@@ -28,6 +28,19 @@ a {
   display: inline-block;
   font-weight: bold;
   margin-left: 1em;
+  padding: 0.5rem 1rem;
+  float: right;
+}
+
+.new_gist_button {
+  background-color: rgb(34, 37, 42);
+  border: none;
+  /*border-bottom: solid 1px rgb(242, 151, 102);*/
+  color: rgb(76, 136, 255);
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 1em;
+  margin-right: 1em;
   padding: 0.5rem 1rem;
   float: right;
 }
@@ -111,10 +124,11 @@ font-size: 22px;
 
 .nav__currentUser {
   display: inline-block;
-  width: 25em;
+  width: 20em;
   text-align: right;
   float: right;
   margin-top: -1.6em;
+  margin-bottom: 0;
   padding-right: 1em;
 }
 
@@ -191,6 +205,7 @@ font-size: 22px;
 .tab_wrapper {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0.5em;
   height: auto;
   width: 42em;
 }

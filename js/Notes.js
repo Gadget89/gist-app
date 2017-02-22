@@ -10,10 +10,10 @@ export default React.createClass({
     return {
       notes: [
         {
-          title:"Get Initial State in React",
-          url:"https://facebook.github.io/react/",
-          note: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          type: "JavaScript"
+          title:"",
+          url:"",
+          note: "",
+          type: ""
         }
       ]
     }
@@ -30,19 +30,16 @@ export default React.createClass({
     this.state.notes=this.state.notes.concat(newNotes)
     this.setState(this.state.notes)
 
-    console.log("newNotes:", this.state.notes)
-
     var tempUser = this.props.user.name
     var tempHold = tempUser.split(" ")
     var fbUser = tempHold[0]
-    console.log("temphold",fbUser);
     var updates = {}
     updates["/Notes/" + fbUser] = this.state.notes
     firebase.database().ref().update(updates)
     // firebase.database().ref("/Notes/" + tempHold[0] + "/").push().update(newNotes)
 
     this.refs.newGistForm.className = "hidden"
-    this.refs.newGistButton.className = "new_gist_clear_button"
+    this.refs.newGistButton.className = "new_gist_button"
     this.refs.title.value = ""
     this.refs.url.value= ""
     this.refs.note.value= ""
@@ -71,18 +68,12 @@ export default React.createClass({
 
 
   render() {
-        console.log("Blah",this.props.notes);
         if(this.props.notes!=undefined){
           this.state.notes=this.props.notes
         }
     return (
       <section>
-        <button
-          className="hidden"
-          onClick={this.onAddNoteClick}
-          ref="newGistButton">
-          +
-        </button>
+
         <div
           className="gist_form"
           ref="newGistForm">
@@ -95,16 +86,16 @@ export default React.createClass({
               className="dropdown"
               name="tab"
               ref="selected">
-              <option value="JavaScript">JavaScript</option>
-              <option value="HTML">HTML</option>
-              <option value="CSS">CSS</option>
+              <option value="JavaScript">JavaScript Note</option>
+              <option value="HTML">HTML Note</option>
+              <option value="CSS">CSS Note</option>
             </select>
             <button
-              className="new_gist_button"
+              className="new_gist_clear_button"
               type="reset">
               Clear</button>
             <button
-              className="new_gist_button"
+              className="new_gist_clear_button"
               onClick={ this.onSaveClick }
               type="submit">Save</button>
             <input
@@ -130,12 +121,20 @@ export default React.createClass({
 
         <section>
         <div className="tab_wrapper">
+
           <button className="tab_links" onClick={this.onJsTabClick}>JavaScript</button>
           <button className="tab_links" onClick={this.onCssTabClick}>CSS</button>
           <button className="tab_links" onClick={this.onHtmlTabClick}>HTML</button>
+          <button
+            className="hidden"
+            onClick={this.onAddNoteClick}
+            ref="newGistButton">
+            Add Note
+          </button>
         </div>
         </section>
         <div id="" ref="jsTab" className="tab_content">
+          <p>JavaScript Notes</p>
           { this.state.notes.map( (note, i)=>{
             if (note.type === "JavaScript"){
           return <Note title={note.title}
@@ -149,6 +148,7 @@ export default React.createClass({
         </div>
 
         <div id="" ref="cssTab" className="hidden">
+          <p>CSS Notes</p>
           { this.state.notes.map( (note, i)=>{
             if (note.type === "CSS"){
           return <Note title={note.title}
@@ -162,6 +162,7 @@ export default React.createClass({
         </div>
 
         <div id="Tokyo" ref="htmlTab" className="hidden">
+          <p>HTML Notes</p>
           { this.state.notes.map( (note, i)=>{
             if (note.type === "HTML"){
           return <Note title={note.title}
