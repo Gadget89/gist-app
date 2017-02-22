@@ -87,13 +87,16 @@ export default React.createClass({
         name: ""
       })
     })
+    window.location.reload(true);
   },
   render() {
     return (
       <section>
         <Header user={this.state.user}
               logInUser={this.logInUser}
-              signUserOut={this.signUserOut}/>
+              signUserOut={this.signUserOut}
+              currentName={this.state.user.currentName}
+              picture={this.state.user.picture}/>
         {this.props.children && React.cloneElement(this.props.children,
                    { user: this.state.user })}
         <Notes user={this.state.user}

@@ -91,9 +91,10 @@ a {
 
 .note_list_wrapper {
   background-color: rgb(34, 37, 42);
+  border: solid 2px;
   height: auto;
   margin: .8em auto;
-  padding: 0em;
+  padding: 0.5em;
   text-align: left;
   width: 39em;
 }
