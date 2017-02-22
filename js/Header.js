@@ -16,8 +16,8 @@ render() {
               <b>gistApp=</b>
             </p>
             <br></br>
-            <p>
-                "notes for coders"
+            <p className="nav_logo_sub">
+              <b>"notes for coders"</b>
             </p>
             <div>
           </div>

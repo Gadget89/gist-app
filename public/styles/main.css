@@ -64,7 +64,8 @@ a {
 .footer {
   background-color: rgb(34, 37, 42);
   margin-top: 1em;
-  height: 4em;
+  height: 3em;
+  padding: 1em;
   width: 100%;
 }
 
@@ -91,7 +92,7 @@ a {
 
 .note_list_wrapper {
   background-color: rgb(34, 37, 42);
-  border: solid 2px;
+  border: solid 2px grey;
   height: auto;
   margin: .8em auto;
   padding: 0.5em;
@@ -112,6 +113,11 @@ a {
   display: inline-block;
 margin: 0;
 font-size: 22px;
+}
+.nav_logo_sub {
+  color: rgb(154, 185, 195);
+  margin-top: -0.5px;
+  padding-left: 2em;
 }
 
 .nav_logo_wrapper {
